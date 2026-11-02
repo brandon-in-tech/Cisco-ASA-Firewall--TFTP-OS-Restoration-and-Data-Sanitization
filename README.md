@@ -2,14 +2,14 @@
   <img src="assets/brandons-logo.png" alt="Brandon's logo" width="140">
 </p>
 
-# Cisco ASA Firewall — TFTP-Based OS Restoration & Flash Reset
+# Cisco ASA Firewall —  Secure Data Sanitzation & TFTP-Based-Transfer OS Restoration 
 
 **Physical Cisco infrastructure · ROMMON recovery · TFTP image transfer · Post-recovery verification**
 
 ## Overview
 
 <p align="center">
-  <img src="assets/flow%20chart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
+  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
 </p>
 <p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
 
