@@ -9,7 +9,7 @@
 ## Overview
 
 <p align="center">
-  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
+  <img src="assets/flow%20chart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
 </p>
 <p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
 
@@ -36,6 +36,7 @@ The screenshots were captured during the work through a serial-console session. 
 - [10. Boot image configuration](#10-boot-image-configuration)
 - [11. Interface and failover checks](#11-interface-and-failover-checks)
 - [Results and scope](#results-and-scope)
+- [About the Engineer](#about-the-engineer)
 
 ---
 
@@ -286,3 +287,35 @@ The console record documents completion of the ASA-side recovery workflow:
 **Evidence:** All 20 available screenshots are embedded in the relevant steps. Original image filenames are preserved; no `step19.png` was included in the source evidence.
 
 [↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+## About the Engineer
+
+<p align="center">
+  <img src="assets/brandons-logo.png" alt="Brandon Stevenson — personal logo" width="120">
+</p>
+
+<h3 align="center">Brandon Stevenson</h3>
+
+<p align="center">
+  <strong>IT Infrastructure Technician</strong><br>
+  Enterprise Infrastructure &nbsp;·&nbsp; Systems Administration &nbsp;·&nbsp; Software Development
+</p>
+
+<p align="center">
+  <strong>Bachelor of Science — Cloud and Network Engineering (In Progress)</strong><br>
+  Western Governors University<br><br>
+  <strong>Associate of Applied Science — Software Programming</strong><br>
+  College of Southern Nevada
+</p>
+
+My background spans hands-on enterprise hardware, IT support, endpoint deployment, and software development. I've worked with device imaging and configuration, Active Directory, Microsoft Intune, Microsoft 365, and infrastructure troubleshooting. I focus on practical problem-solving, careful validation, and clear documentation of completed work.
+
+<p align="center">
+  <a href="https://brandons-resume.com/">Portfolio</a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/brandon-in-tech/">LinkedIn</a>
+</p>
+
+<p align="center"><sub>Technical documentation and project evidence by Brandon Stevenson.</sub></p>
