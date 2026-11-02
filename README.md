@@ -9,7 +9,7 @@
 ## Overview
 
 <p align="center">
-  <img src="assets/flow%20chart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
+  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
 </p>
 <p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
 
