@@ -1,18 +1,15 @@
-
+<p align="center">
+  <img src="assets/brandons-logo.png" alt="Brandon's logo" width="140">
+</p>
 
 # Cisco ASA Firewall — TFTP-Based OS Restoration & Flash Reset
 
 **Physical Cisco infrastructure · ROMMON recovery · TFTP image transfer · Post-recovery verification**
 
-
-<p align="center">
-  <img src="assets/brandons-logo.png" alt="Brandon's logo" width="140">
-</p>
-
 ## Overview
 
 <p align="center">
-  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
+  <img src="assets/flow%20chart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
 </p>
 <p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
 
@@ -262,7 +259,7 @@ Configured the ASA to reference the restored image on internal flash rather than
 
 ![Flash verification, local boot image selection, and module status](assets/step20.png)
 
-The screenshots do not show a subsequent configuration save or power-cycle test after the final boot-system change. Persistence through another reboot is therefore not asserted.
+The ROMMON recovery settings were explicitly saved with `sync`, and the firewall was restarted using `reset` before successful ASA software and hardware verification (see Steps 07–09). The restored image was subsequently selected as the local boot target, and `show running-config boot system` and `show bootvar` were used to verify the active boot configuration. The final configuration was also saved and the appliance restarted, as confirmed by the engineer performing the recovery. The embedded screenshots document the ROMMON save/restart and post-boot checks; the final ASA configuration-save and subsequent restart are reported as completed work rather than presented as independently visible in the cited screenshot.
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -292,7 +289,9 @@ The console record documents completion of the ASA-side recovery workflow:
 - Existing ASA software image copied to a TFTP server before the flash erase.
 - Internal flash recreated, verified empty, and repopulated with the ASA image over TFTP.
 - ASA software booted and checked against the recorded version and hardware inventory.
-- Local boot-image configuration, interface status, and failover state reviewed.
+- ROMMON variables saved and the appliance restarted successfully; the restored ASA image and hardware state were verified after boot.
+- Local boot-image selection and BOOT variable verified; the engineer additionally confirms saving the final ASA configuration and restarting the appliance.
+- Interface status and failover state reviewed.
 
 **Scope:** This project covers the ASA operating system on physical Cisco hardware. It does not establish independent FirePOWER module recovery, certified media destruction, or a production firewall cutover.
 
