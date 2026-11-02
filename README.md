@@ -1,10 +1,13 @@
+
+
+# Cisco ASA Firewall — TFTP-Based OS Restoration & Flash Reset
+
+**Physical Cisco infrastructure · ROMMON recovery · TFTP image transfer · Post-recovery verification**
+
+
 <p align="center">
   <img src="assets/brandons-logo.png" alt="Brandon's logo" width="140">
 </p>
-
-# Cisco ASA Firewall —  Secure Data Sanitzation & TFTP-Based-Transfer OS Restoration 
-
-**Physical Cisco infrastructure · ROMMON recovery · TFTP image transfer · Post-recovery verification**
 
 ## Overview
 
@@ -24,6 +27,7 @@ The screenshots were captured during the work through a serial-console session. 
 ## Table of Contents
 
 - [Environment](#environment)
+  - [Recovery network topology](#recovery-network-topology)
 - [01. Console access and ROMMON inspection](#01-console-access-and-rommon-inspection)
 - [02. Temporary recovery boot](#02-temporary-recovery-boot)
 - [03. Configuration reset and management setup](#03-configuration-reset-and-management-setup)
@@ -52,6 +56,14 @@ The screenshots were captured during the work through a serial-console session. 
 | TFTP server | `192.168.1.10` |
 | ASA address for transfer | `192.168.1.1/24` |
 | Internal storage | `disk0:` |
+
+### Recovery Network Topology
+
+<p align="center">
+  <img src="assets/topology.png" alt="Cisco ASA physical recovery network topology showing serial-console management, the TFTP server, temporary IP addressing, and the firmware restoration path" width="100%">
+</p>
+
+<p align="center"><em>Physical console access and temporary Ethernet/TFTP image-transfer path used during the ASA recovery.</em></p>
 
 The operation documented here is the restoration of the **ASA software environment**. The installed FirePOWER module was identified during inspection, but its independent recovery is not part of this record.
 
