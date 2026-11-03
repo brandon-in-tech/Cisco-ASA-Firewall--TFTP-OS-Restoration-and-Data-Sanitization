@@ -7,21 +7,6 @@
 
 **Physical Cisco infrastructure · ROMMON recovery · TFTP image transfer · Post-recovery verification**
 
-## Overview
-
-<p align="center">
-  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
-</p>
-<p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
-
-This project documents the reset and operating system restoration of a physical Cisco ASA firewall. The work involved recovering CLI access, removing the saved configuration, transferring the ASA software image to a TFTP server, erasing and rebuilding internal flash, restoring the image, and reviewing the appliance after boot.
-
-The screenshots were captured during the work through a serial-console session. Hardware serial numbers and MAC addresses have been obscured in the published evidence.
-
-[↑ Back to Table of Contents](#table-of-contents)
-
----
-
 ## Table of Contents
 
 - [Environment](#environment)
@@ -41,6 +26,95 @@ The screenshots were captured during the work through a serial-console session. 
 - [About the Engineer](#about-the-engineer)
 
 ---
+
+## Overview
+
+<p align="center">
+  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
+</p>
+<p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
+
+This project documents the reset and operating system restoration of a physical Cisco ASA firewall. The work involved recovering CLI access, removing the saved configuration, transferring the ASA software image to a TFTP server, erasing and rebuilding internal flash, restoring the image, and reviewing the appliance after boot.
+
+The screenshots were captured during the work through a serial-console session. Hardware serial numbers and MAC addresses have been obscured in the published evidence.
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+## Infrastructure Maintenance Workflow
+
+```mermaid
+flowchart TD
+    A["Physical Cisco ASA 5585-X Firewall - SSP-60"]
+    B["Establish Serial Console Connection via Tera Term"]
+    C["Access ROMMON and Inspect Boot Environment"]
+    D["Configure Temporary Boot Register - 0x41"]
+    E["Boot ASA Software from Internal Flash"]
+    F["Erase Startup Configuration"]
+    G["Apply Factory-Default Management Configuration"]
+    H["Inspect Flash Storage and Identify ASA Image"]
+    I["Verify TFTP Server Connectivity"]
+    J["Back Up ASA Software Image to TFTP Server"]
+    K["Erase and Reinitialize Internal Flash - disk0"]
+    L["Verify Internal Flash Filesystem Is Empty"]
+    M["Restore ASA Software Image via TFTP"]
+    N["Verify Restored Image in Internal Flash"]
+    O["Reload Firewall and Access ROMMON"]
+    P["Clear Temporary ROMMON Network Variables"]
+    Q["Restore Normal Configuration Register - 0x1"]
+    R["Synchronize ROMMON Settings and Restart"]
+    S["Verify ASA Software Version and Booted Image"]
+    T["Inspect Chassis, Modules, CPU and Memory"]
+    U["Review Running and Startup Configurations"]
+    V["Configure Local ASA Boot Image"]
+    W["Verify Boot System Directive and BOOT Variable"]
+    X["Inspect Firewall Interfaces and Failover Status"]
+    Y["Document Results and Verification Scope"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
+    N --> O
+    O --> P
+    P --> Q
+    Q --> R
+    R --> S
+    S --> T
+    T --> U
+    U --> V
+    V --> W
+    W --> X
+    X --> Y
+
+    classDef hardware fill:#073B70,color:#ffffff,stroke:#007CC3,stroke-width:2px
+    classDef access fill:#E8F4FD,color:#082D50,stroke:#007CC3,stroke-width:1px
+    classDef maintenance fill:#FFF3E2,color:#754600,stroke:#D89632,stroke-width:1px
+    classDef verification fill:#E8F5F1,color:#115846,stroke:#259B78,stroke-width:1px
+    classDef complete fill:#073B70,color:#ffffff,stroke:#259B78,stroke-width:2px
+
+    class A hardware
+    class B,C,D,E,G,H,I access
+    class F,J,K,L,M,N,O,P,Q,R maintenance
+    class S,T,U,V,W,X verification
+    class Y complete
+```
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+
 
 ## Environment
 
