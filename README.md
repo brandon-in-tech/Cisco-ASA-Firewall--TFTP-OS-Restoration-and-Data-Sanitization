@@ -6,22 +6,6 @@
 </p>
 
 **Physical Cisco infrastructure · ROMMON recovery · TFTP image transfer · Post-recovery verification**
-
-## Overview
-
-<p align="center">
-  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
-</p>
-<p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
-
-This project documents the reset and operating system restoration of a physical Cisco ASA firewall. The work involved recovering CLI access, removing the saved configuration, transferring the ASA software image to a TFTP server, erasing and rebuilding internal flash, restoring the image, and reviewing the appliance after boot.
-
-The screenshots were captured during the work through a serial-console session. Hardware serial numbers and MAC addresses have been obscured in the published evidence.
-
-[↑ Back to Table of Contents](#table-of-contents)
-
----
-
 ## Table of Contents
 
 - [Environment](#environment)
@@ -41,6 +25,23 @@ The screenshots were captured during the work through a serial-console session. 
 - [About the Engineer](#about-the-engineer)
 
 ---
+
+## Overview
+
+<p align="center">
+  <img src="assets/flowchart.png" alt="Cisco ASA firewall recovery workflow flow chart" width="100%">
+</p>
+<p align="center"><em>High-level visual summary of the firewall recovery, sanitization, and TFTP-based operating system restoration process documented in this repository.</em></p>
+
+This project documents the reset and operating system restoration of a physical Cisco ASA firewall. The work involved recovering CLI access, removing the saved configuration, transferring the ASA software image to a TFTP server, erasing and rebuilding internal flash, restoring the image, and reviewing the appliance after boot.
+
+The screenshots were captured during the work through a serial-console session. Hardware serial numbers and MAC addresses have been obscured in the published evidence.
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+
 
 
 
